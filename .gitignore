@@ -1,6 +1,3 @@
-/*
-/*/
-
-!.gitignore
-!/ThatOneThing/Assets/
-!/ThatOneThing/ProjectSettings/
+ThatOneThing/Temp/
+ThatOneThing/Library/
+ThatOneThing/Library/GridBrush/UnityEditor.GridBrush.asset
