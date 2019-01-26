@@ -15,9 +15,12 @@ public class PointOfInterest : MonoBehaviour
 
     [SerializeField]
     public float timeCost { get; protected set; }
+    
+    [SerializeField]
+    public Impact impact { get; protected set; }
 
     //[SerializeField]
-    //
+    //dialogue?
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +32,10 @@ public class PointOfInterest : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Interact()
+    {
+        impact.Activate();
     }
 }

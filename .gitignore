@@ -9,3 +9,5 @@ ThatOneThing/obj/
 *.sln
 
 *.csproj
+
+*.info
