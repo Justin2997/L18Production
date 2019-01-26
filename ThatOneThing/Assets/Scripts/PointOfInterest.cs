@@ -21,7 +21,7 @@ public class PointOfInterest : MonoBehaviour
 
     //[SerializeField]
     //dialogue?
-
+    
     // Start is called before the first frame update
     void Start()
     {
