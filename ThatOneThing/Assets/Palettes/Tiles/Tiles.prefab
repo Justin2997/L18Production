@@ -6959,13 +6959,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 63aafe951daf6624c858fc966a139289, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 7c7770eadcbccb2489ea3a3f72067428, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: c1eb194c0a6a20a408bbd4b02bd5aa2e, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 201bb93fbdd74674b976c75b9505d71e, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e482654fea79fcc40ad25ab21250e3da, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: e5170af0762831e4b924ac961b7f28df, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 32a91ff6a12dce8478aa65d707017a5a, type: 2}
