@@ -1,3 +1,11 @@
 ThatOneThing/Temp/
 ThatOneThing/Library/
 ThatOneThing/Library/GridBrush/UnityEditor.GridBrush.asset
+
+ThatOneThing/\.vs/
+
+ThatOneThing/obj/
+
+*.sln
+
+*.csproj
