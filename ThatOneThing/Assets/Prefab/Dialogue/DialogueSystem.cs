@@ -16,6 +16,9 @@ public class DialogueSystem : MonoBehaviour
     protected Text m_UIDialogueNameReference;
     [SerializeField]
     protected Animator m_UIDialogueBoxAnimator;
+    [SerializeField]
+    protected Image m_UIDialogueImageReference;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +77,7 @@ public class DialogueSystem : MonoBehaviour
 
         m_UIDialogueNameReference.text = m_CurrentDialogue.DialogueName;
         m_UIDialogueBoxReference.text = m_CurrentDialogue.Sentences[m_PhraseIt];
+        m_UIDialogueImageReference.sprite = m_CurrentDialogue.DialogueImage;
     }
 
     public void AddDialogue(Dialogue dialogueToAdd)
