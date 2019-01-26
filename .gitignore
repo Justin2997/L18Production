@@ -1,4 +1,6 @@
+/*
+/*/
 
-ThatOneThing/Library/
-
-*.info
+!.gitignore
+!/Assets/
+!/ProjectSettings/
