@@ -14,6 +14,9 @@ public class WellBeingManager : MonoBehaviour
     [SerializeField]
     protected float totalTime;
 
+    [SerializeField]
+    protected float WBRateDecay;
+
     // UI
     [SerializeField]
     Text UI_timeText;
@@ -21,9 +24,24 @@ public class WellBeingManager : MonoBehaviour
     [SerializeField]
     Slider UI_wellBeing;
 
+    static private WellBeingManager instance;
+
+    private void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
     }
 
     // Update is called once per frame
@@ -39,20 +57,30 @@ public class WellBeingManager : MonoBehaviour
     private void FixedUpdate()
     {
         wellBeing += wellBeingRate * Time.fixedDeltaTime;
+
+        wellBeingRate *= 1 - (Time.fixedDeltaTime * WBRateDecay / 1000.0f);
     }
 
     public void UpdateWellBeing(PointOfInterest poi) // called whenever on fait une activité qui demande du temps
     {
+        poi.Interact();
         //on diminue l'importance du précédent poi
         wellBeingRate *= 0.5f;
         
         // log le data du rate?
-        wellBeingRate += poi.deltaWBRate;
+        wellBeingRate += poi.getDeltaWBRate();
 
-        wellBeing += wellBeing > poi.optimumWB ? poi.deltaWB * poi.optimumWB / wellBeing : poi.deltaWB;
+        float dWB = poi.getDeltaWB() * Mathf.Pow(poi.getRepeatMultiplier(), PointOfInterest.uses[poi.getCategory()]);
 
-        wellBeing += wellBeingRate * poi.timeCost;
+        wellBeing += wellBeing > poi.getOptimumWB() ? dWB * poi.getOptimumWB() / wellBeing : dWB;
 
-        totalTime -= poi.timeCost;
+        wellBeing += poi.getDeltaWBRate() * poi.getTimeCost();
+
+        totalTime -= poi.getTimeCost();
+    }
+
+    static public WellBeingManager GetInstance()
+    {
+        return instance;
     }
 }
