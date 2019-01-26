@@ -14,7 +14,10 @@ public class PointOfInterest : MonoBehaviour
     public float deltaWBRate { get; protected set; }  // delta de la dérivée du bien-être
 
     [SerializeField]
-    public int timeCost { get; protected set; }
+    public float timeCost { get; protected set; }
+
+    //[SerializeField]
+    //
 
     // Start is called before the first frame update
     void Start()
