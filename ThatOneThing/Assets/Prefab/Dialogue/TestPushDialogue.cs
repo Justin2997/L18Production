@@ -8,8 +8,7 @@ public class TestPushDialogue : MonoBehaviour
     void Start()
     {
         Dialogue dialogue = GetComponent<Dialogue>();
-        GameObject dialogueManager = GameObject.Find("DialogueManager");
-        dialogueManager.GetComponent<DialogueSystem>().AddDialogue(dialogue);
+        DialogueSystem.GetInstance().AddDialogue(dialogue);
     }
 
     // Update is called once per frame

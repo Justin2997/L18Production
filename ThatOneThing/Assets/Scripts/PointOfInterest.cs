@@ -5,27 +5,62 @@ using UnityEngine;
 public class PointOfInterest : MonoBehaviour
 {
     [SerializeField]
-    public float deltaWB { get; protected set; } // delta du bien-être instantané
+    protected float deltaWB; // delta du bien-être instantané
 
     [SerializeField]
-    public float optimumWB { get; protected set; }  // point auquel le gain de WB est maximum; dépassé ce point, le gain diminue
+    protected float usesMultiplier = 1;
+    public float getRepeatMultiplier()
+    {
+        return usesMultiplier;
+    }
 
     [SerializeField]
-    public float deltaWBRate { get; protected set; }  // delta de la dérivée du bien-être
+    string category;
+    public string getCategory()
+    {
+        return category;
+    }
+
+    static public Dictionary<string, int> uses = new Dictionary<string, int>();
+
+    public float getDeltaWB()
+    {
+        return deltaWB;
+    }
 
     [SerializeField]
-    public float timeCost { get; protected set; }
+    protected float optimumWB;  // point auquel le gain de WB est maximum; dépassé ce point, le gain diminue
+    public float getOptimumWB()
+    {
+        return optimumWB;
+    }
+
+    [SerializeField]
+    protected float deltaWBRate;  // delta de la dérivée du bien-être
+    public float getDeltaWBRate()
+    {
+        return deltaWBRate;
+    }
+
+    [SerializeField]
+    protected float timeCost;
+    public float getTimeCost()
+    {
+        return timeCost;
+    }
+
+    [SerializeField]
+    protected Impact impact;
+
+    [SerializeField]
+    protected Dialogue dialogue;
     
-    [SerializeField]
-    public Impact impact { get; protected set; }
 
-    //[SerializeField]
-    //dialogue?
-    
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!uses.ContainsKey(category))
+            uses[category] = 0;
     }
 
     // Update is called once per frame
@@ -36,6 +71,10 @@ public class PointOfInterest : MonoBehaviour
 
     public void Interact()
     {
-        impact.Activate();
+        DialogueSystem.GetInstance().AddDialogue(dialogue);
+        print("DIALOGUEEE");
+        uses[category]++;
+        if(impact)
+            impact.Activate();
     }
 }

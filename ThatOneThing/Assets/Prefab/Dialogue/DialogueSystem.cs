@@ -20,9 +20,25 @@ public class DialogueSystem : MonoBehaviour
     protected Image m_UIDialogueImageReference;
 
     // Start is called before the first frame update
+
+    static private DialogueSystem instance;
+
+    private void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
-    
+        instance = this;
     }
 
     // Update is called once per frame
@@ -30,7 +46,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if(m_IsDialoguePlaying)
         {
-            if(Input.GetKeyUp("space"))
+            if(Input.GetKeyDown("space"))
             {
                 NextPhrase();
             }
@@ -83,5 +99,10 @@ public class DialogueSystem : MonoBehaviour
     public void AddDialogue(Dialogue dialogueToAdd)
     {
         m_DialogueQueue.Enqueue(dialogueToAdd);
+    }
+
+    static public DialogueSystem GetInstance()
+    {
+        return instance;
     }
 }
