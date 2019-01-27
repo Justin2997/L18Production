@@ -21,7 +21,7 @@ public class Trigger : MonoBehaviour
     private bool insideTrigger;
     private bool activePoint;
 
-
+    static List<Trigger> activePoints = new List<Trigger>();
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +50,9 @@ public class Trigger : MonoBehaviour
             interactPrompt.gameObject.SetActive(true);
             interactPrompt.text = promptText;
 
+            if(!activePoints.Find(x => x == this))
+                activePoints.Add(this);
+
             if (Input.GetKeyDown(KeyCode.E)) // temp
             {
                 /// TODO
@@ -64,7 +67,11 @@ public class Trigger : MonoBehaviour
         else
         {
             timer += Time.deltaTime;
-            interactPrompt.gameObject.SetActive(false);
+            if (activePoints.Find(x => x == this))
+                activePoints.Remove(this);
+
+            if (activePoints.Count == 0)
+                interactPrompt.gameObject.SetActive(false);
         }
     }
 
