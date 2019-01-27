@@ -12,8 +12,7 @@ public class Trigger : MonoBehaviour
     protected float cooldown;
 
     private float timer;
-
-    [SerializeField]
+    
     protected Text interactPrompt;
 
     private bool insideTrigger;
@@ -24,6 +23,7 @@ public class Trigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        interactPrompt = GameObject.Find("/Canvas_HUD/InteractPrompt").GetComponent<Text>();
         collider = GetComponent<Collider2D>();
         poi = GetComponent<PointOfInterest>();
         insideTrigger = false;
