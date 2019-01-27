@@ -7,7 +7,7 @@ public class move : MonoBehaviour
     public Animator animator;
     public float speed;
     private Rigidbody2D rb;
-    private bool ismoving;
+    public bool ismoving;
 
     private void Start()
     {
@@ -21,7 +21,21 @@ public class move : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Magnitude", movement.magnitude);
 
-        transform.position = transform.position + movement * Time.deltaTime * speed;
+        if(transform.position == transform.position + movement * Time.deltaTime * speed)
+        {
+           
+            ismoving = false;
+            Debug.Log(ismoving);
+        }
+        else
+        {
+            transform.position = transform.position + movement * Time.deltaTime * speed;
+            
+            ismoving = true;
+            Debug.Log(ismoving);
+        }
+       
+        
     }
 }
 

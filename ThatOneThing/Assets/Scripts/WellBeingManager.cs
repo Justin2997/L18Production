@@ -24,6 +24,9 @@ public class WellBeingManager : MonoBehaviour
 
     static private WellBeingManager instance;
 
+    //Conclusion 
+
+    List<PointOfInterest> PoiList = new List<PointOfInterest>();
     public ConclusionTransition conclusion;
 
     private void Awake()
