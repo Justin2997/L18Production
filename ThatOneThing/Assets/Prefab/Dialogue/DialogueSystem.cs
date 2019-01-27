@@ -19,7 +19,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField]
     protected Image m_UIDialogueImageReference;
 
-    // Start is called before the first frame update
+    protected AudioSource m_audioSource;
 
     static private DialogueSystem instance;
 
@@ -38,6 +38,7 @@ public class DialogueSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +46,9 @@ public class DialogueSystem : MonoBehaviour
     {
         if(m_IsDialoguePlaying)
         {
+            if(!m_audioSource.isPlaying)
+                m_audioSource.PlayOneShot(m_CurrentDialogue.DialogueAudio);
+
             if(Input.GetKeyDown("space"))
             {
                 NextPhrase();
