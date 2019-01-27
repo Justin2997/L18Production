@@ -13,13 +13,14 @@ public class move : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         if (!blockMovement)
         {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
             if (Input.GetKey(KeyCode.W))
             {
                 rb.AddForce(Vector2.up * speed);
@@ -40,24 +41,24 @@ public class move : MonoBehaviour
                 rb.AddForce(Vector2.right * speed);
                 ismoving = true;
             }
-        }
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Magnitude", movement.magnitude);
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Magnitude", movement.magnitude);
 
-        if (transform.position == transform.position + movement * Time.deltaTime * speed)
-        {
+            if (transform.position == transform.position + movement * Time.deltaTime * speed)
+            {
 
-            ismoving = false;
+                ismoving = false;
          
-        }
-        else
-        {
-            transform.position = transform.position + movement * Time.deltaTime * speed;
+            }
+            else
+            {
+                transform.position = transform.position + movement * Time.deltaTime * speed;
 
-            ismoving = true;
-          
+                ismoving = true;
+
+            }
         }
 
     }
