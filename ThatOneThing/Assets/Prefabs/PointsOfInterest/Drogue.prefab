@@ -48,7 +48,7 @@ MonoBehaviour:
   - w h y   a m   i   s t i l l   d o i n g   t h i s
   DialogueName: vice
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: 20ba75e95912f481bbeb4e756c6a6baf, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0

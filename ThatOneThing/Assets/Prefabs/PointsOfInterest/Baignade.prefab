@@ -47,7 +47,7 @@ MonoBehaviour:
   - "Watch out! The water\u2019s pretty wet during this time of year."
   DialogueName: sport
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: 0723796b7048f44c6b060273eeb90dde, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0

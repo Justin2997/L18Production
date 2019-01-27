@@ -48,7 +48,7 @@ MonoBehaviour:
   - AH, AH, AH, AAAAAHHAAAA BARBIES
   DialogueName: Food
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: 8645dae3e1c064669b774e7ca8ec3340, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0

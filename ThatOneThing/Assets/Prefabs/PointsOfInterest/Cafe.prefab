@@ -48,7 +48,7 @@ MonoBehaviour:
   - (That's some great coffee)
   DialogueName: Social
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: c65338310c5c74c84a98cee94f3cc973, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0
