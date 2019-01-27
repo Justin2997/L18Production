@@ -45,6 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wellBeing: 50
   wellBeingRate: -0.25
-  totalTime: 300
-  UI_timeText: {fileID: 0}
-  UI_wellBeing: {fileID: 0}
+  totalTime: 10
+  WBRateDecay: 0

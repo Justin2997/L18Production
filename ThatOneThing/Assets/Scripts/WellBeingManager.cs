@@ -24,6 +24,8 @@ public class WellBeingManager : MonoBehaviour
 
     static private WellBeingManager instance;
 
+    public ConclusionTransition conclusion;
+
     private void Awake()
     {
         if (!instance)
@@ -34,11 +36,14 @@ public class WellBeingManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
         UI_timeText = GameObject.Find("/Canvas_HUD/Time").GetComponent<Text>();
         UI_wellBeing = GameObject.Find("/Canvas_HUD/Slider").GetComponent<Slider>();
         instance = this;
@@ -52,6 +57,11 @@ public class WellBeingManager : MonoBehaviour
         // UI
         UI_timeText.text = ((int)totalTime).ToString();
         UI_wellBeing.value = wellBeing / 100.0f;
+
+        if (wellBeing >= 100f || totalTime <= 0f)
+        {
+            conclusion.FadeToConclusion();
+        }
     }
 
     private void FixedUpdate()

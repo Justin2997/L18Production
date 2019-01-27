@@ -4,54 +4,24 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 {
-
+    public Animator animator;
     public float speed;
     private Rigidbody2D rb;
     private bool ismoving;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-Vector2.right * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(-Vector2.up * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(Vector2.right * speed);
-            ismoving = true;
-        }
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
-        Animator animator = GetComponent<Animator>();
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Magnitude", movement.magnitude);
 
-        ismoving = Mathf.Abs(rb.velocity.x) > 0.1 || Mathf.Abs(rb.velocity.x) > 0.1;
-        animator.SetBool("IsMoving", ismoving);
-
-        if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
-        {
-            animator.SetFloat("xVelocity", rb.velocity.x);
-            animator.SetFloat("yVelocity", 0);
-        }
-        else
-        {
-            animator.SetFloat("yVelocity", rb.velocity.y);
-            animator.SetFloat("xVelocity", 0);
-        }
+        transform.position = transform.position + movement * Time.deltaTime * speed;
     }
 }
 
