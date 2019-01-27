@@ -353,11 +353,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3044564477880887973, guid: f5c9215b17ef08f458f3231ea027fcd1,
-        type: 3}
-      propertyPath: m_Name
-      value: UIDialogue
-      objectReference: {fileID: 0}
     - target: {fileID: 3044564477880887969, guid: f5c9215b17ef08f458f3231ea027fcd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -468,5 +463,25 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1745073177}
+    - target: {fileID: 3044564477880887973, guid: f5c9215b17ef08f458f3231ea027fcd1,
+        type: 3}
+      propertyPath: m_Name
+      value: UIDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044564478876594171, guid: f5c9215b17ef08f458f3231ea027fcd1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9e5a6f4b7cbcfe34595c6ad431b54af0, type: 2}
+    - target: {fileID: 3044564478876594174, guid: f5c9215b17ef08f458f3231ea027fcd1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044564478876594174, guid: f5c9215b17ef08f458f3231ea027fcd1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5c9215b17ef08f458f3231ea027fcd1, type: 3}

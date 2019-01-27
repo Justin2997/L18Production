@@ -34,7 +34,6 @@ public class Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         //timer activepoint
         if (timer > cooldown)
         {
@@ -51,10 +50,12 @@ public class Trigger : MonoBehaviour
             {
                 WellBeingManager.GetInstance().UpdateWellBeing(poi);
                 activePoint = false;
+                timer = 0;
             }
         }
         else
         {
+            timer += Time.deltaTime;
             interactPrompt.gameObject.SetActive(false);
         }
     }
