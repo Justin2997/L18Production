@@ -72,7 +72,6 @@ public class PointOfInterest : MonoBehaviour
     public void Interact()
     {
         DialogueSystem.GetInstance().AddDialogue(dialogue);
-        print("DIALOGUEEE");
         uses[category]++;
         if(impact)
             impact.Activate();
