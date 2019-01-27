@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &58510081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8999481372332618168, guid: f5c9215b17ef08f458f3231ea027fcd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1329783586}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &61148881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5359,7 +5371,7 @@ MonoBehaviour:
   m_UIDialogueBoxReference: {fileID: 1228484515}
   m_UIDialogueNameReference: {fileID: 780122237}
   m_UIDialogueBoxAnimator: {fileID: 924493118}
-  m_UIDialogueImageReference: {fileID: 1554539952}
+  m_UIDialogueImageReference: {fileID: 58510081}
 --- !u!1 &1947541263
 GameObject:
   m_ObjectHideFlags: 0
