@@ -12,7 +12,10 @@ public class Trigger : MonoBehaviour
     protected float cooldown;
 
     private float timer;
-    
+
+    [SerializeField]
+    protected string promptText;
+
     protected Text interactPrompt;
 
     private bool insideTrigger;
@@ -45,9 +48,14 @@ public class Trigger : MonoBehaviour
         {
             // show button prompt pour interact
             interactPrompt.gameObject.SetActive(true);
+            interactPrompt.text = promptText;
 
-            if (Input.GetKeyDown(KeyCode.Space)) // temp
+            if (Input.GetKeyDown(KeyCode.E)) // temp
             {
+                /// TODO
+                //block movement 
+                //block input
+                //transition
                 WellBeingManager.GetInstance().UpdateWellBeing(poi);
                 activePoint = false;
                 timer = 0;
