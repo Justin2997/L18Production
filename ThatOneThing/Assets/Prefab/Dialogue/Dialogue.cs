@@ -9,4 +9,5 @@ public class Dialogue : MonoBehaviour
     public string[] Sentences;
     public string DialogueName;
     public Sprite DialogueImage;
+    public AudioClip DialogueAudio;
 }
