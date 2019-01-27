@@ -9,6 +9,8 @@ public class move : MonoBehaviour
     private Rigidbody2D rb;
     private bool ismoving;
 
+    static public bool blockMovement = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,25 +18,28 @@ public class move : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (!blockMovement)
         {
-            rb.AddForce(Vector2.up * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-Vector2.right * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(-Vector2.up * speed);
-            ismoving = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(Vector2.right * speed);
-            ismoving = true;
+            if (Input.GetKey(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * speed);
+                ismoving = true;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(-Vector2.right * speed);
+                ismoving = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                rb.AddForce(-Vector2.up * speed);
+                ismoving = true;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(Vector2.right * speed);
+                ismoving = true;
+            }
         }
 
         Animator animator = GetComponent<Animator>();
@@ -52,6 +57,7 @@ public class move : MonoBehaviour
             animator.SetFloat("yVelocity", rb.velocity.y);
             animator.SetFloat("xVelocity", 0);
         }
+
     }
 }
 

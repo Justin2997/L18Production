@@ -53,11 +53,9 @@ public class Trigger : MonoBehaviour
             if(!activePoints.Find(x => x == this))
                 activePoints.Add(this);
 
-            if (Input.GetKeyDown(KeyCode.E)) // temp
+            if (Input.GetKeyDown(KeyCode.E) && !move.blockMovement) 
             {
                 /// TODO
-                //block movement 
-                //block input
                 //transition
                 WellBeingManager.GetInstance().UpdateWellBeing(poi);
                 activePoint = false;
