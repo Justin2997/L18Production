@@ -130,5 +130,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed3947e1789c654b93e01a1a378f535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
-  promptText: "D L\xD6\xD6PPPP"
+  cooldown: 10
+  promptText: Swim

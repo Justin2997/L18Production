@@ -47,8 +47,8 @@ MonoBehaviour:
   - Alcohol is man's worst enemy, but the Bible teaches us to love our enemies.
   - True or not, it's always better with friends.
   DialogueName: Social
-  DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueImage: {fileID: 21300966, guid: d8c48266b4baf3a43bba3f3152437445, type: 3}
+  DialogueAudio: {fileID: 8300000, guid: 208ef83592e904837b09a561b8f6ffff, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0
