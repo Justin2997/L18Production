@@ -24,8 +24,7 @@ public class playerFootStep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //if(m_MoveComponent.ismoving && IsReadyForNewFootstepSound())
+        if(m_MoveComponent.ismoving && IsReadyForNewFootstepSound())
         {
             if (m_SoundManager.m_CurrentZone == MapZone.Ville)
             {

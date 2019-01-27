@@ -14,16 +14,19 @@ public class Trigger : MonoBehaviour
     private float timer;
 
     [SerializeField]
+    protected string promptText;
+
     protected Text interactPrompt;
 
     private bool insideTrigger;
     private bool activePoint;
 
-
+    static List<Trigger> activePoints = new List<Trigger>();
 
     // Start is called before the first frame update
     void Start()
     {
+        interactPrompt = GameObject.Find("/Canvas_HUD/InteractPrompt").GetComponent<Text>();
         collider = GetComponent<Collider2D>();
         poi = GetComponent<PointOfInterest>();
         insideTrigger = false;
@@ -45,9 +48,17 @@ public class Trigger : MonoBehaviour
         {
             // show button prompt pour interact
             interactPrompt.gameObject.SetActive(true);
+            interactPrompt.text = promptText;
 
-            if (Input.GetKeyDown(KeyCode.Space)) // temp
+            if(!activePoints.Find(x => x == this))
+                activePoints.Add(this);
+
+            if (Input.GetKeyDown(KeyCode.E)) // temp
             {
+                /// TODO
+                //block movement 
+                //block input
+                //transition
                 WellBeingManager.GetInstance().UpdateWellBeing(poi);
                 activePoint = false;
                 timer = 0;
@@ -56,7 +67,11 @@ public class Trigger : MonoBehaviour
         else
         {
             timer += Time.deltaTime;
-            interactPrompt.gameObject.SetActive(false);
+            if (activePoints.Find(x => x == this))
+                activePoints.Remove(this);
+
+            if (activePoints.Count == 0)
+                interactPrompt.gameObject.SetActive(false);
         }
     }
 

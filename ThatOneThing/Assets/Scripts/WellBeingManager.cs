@@ -18,13 +18,14 @@ public class WellBeingManager : MonoBehaviour
     protected float WBRateDecay;
 
     // UI
-    [SerializeField]
-    Text UI_timeText;
-
-    [SerializeField]
-    Slider UI_wellBeing;
+    protected Text UI_timeText;
+    
+    protected Slider UI_wellBeing;
 
     static private WellBeingManager instance;
+
+    List<PointOfInterest> PoiList = new List<PointOfInterest>();
+    public ConclusionTransition conclusion;
 
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class WellBeingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UI_timeText = GameObject.Find("/Canvas_HUD/Time").GetComponent<Text>();
+        UI_wellBeing = GameObject.Find("/Canvas_HUD/Slider").GetComponent<Slider>();
         instance = this;
     }
 
@@ -52,6 +55,11 @@ public class WellBeingManager : MonoBehaviour
         // UI
         UI_timeText.text = ((int)totalTime).ToString();
         UI_wellBeing.value = wellBeing / 100.0f;
+
+        if (wellBeing >= 100f || totalTime <= 0f)
+        {
+            conclusion.FadeToConclusion();
+        }
     }
 
     private void FixedUpdate()
