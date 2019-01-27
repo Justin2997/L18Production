@@ -3,7 +3,13 @@ guid: 1c3820455f8d80443958d3b21b705494
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_MusicVille: {fileID: 8300000, guid: 8f6b11c232337437c8d5cb4343a2e33f, type: 3}
+  - m_MusicParc: {fileID: 8300000, guid: 09c8cfd02e72e4dad8636fed38132871, type: 3}
+  - m_MusicPlage: {fileID: 8300000, guid: 572c5c0b520364f69b07c4d7fb91880b, type: 3}
+  - m_AMBVille: {instanceID: 0}
+  - m_AMBParc: {instanceID: 0}
+  - m_AMBPlage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -58,8 +58,9 @@ public class SoundManager : MonoBehaviour
                 m_AMBAudioSource.clip = m_AMBParc;
             }
 
-            m_AudioSource.Play();
-            m_AMBAudioSource.Play();
+              m_AudioSource.Play();
+              m_AMBAudioSource.Play();
+            
         }
     }
 }
