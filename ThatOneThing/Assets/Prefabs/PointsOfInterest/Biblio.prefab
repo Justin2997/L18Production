@@ -49,7 +49,7 @@ MonoBehaviour:
   - "\u2015 Mahatma Gandhi\r"
   DialogueName: Reading
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: 1b2eb89bce734474fb5993397bf0738b, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0

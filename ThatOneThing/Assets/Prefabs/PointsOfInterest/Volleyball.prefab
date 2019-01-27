@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sentences:
-  - "\rToday, I consider myself the luckiest man on the face of the earth.\r"
-  - (That's some great coffee)
-  DialogueName: Social
+  - "Volley-ball is fun. Sshh\u2026 It is."
+  DialogueName: Food
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 8300000, guid: c65338310c5c74c84a98cee94f3cc973, type: 3}
+  DialogueAudio: {fileID: 8300000, guid: 721d35adf58c64f6b9b6aa4bd3729ca0, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +61,7 @@ GameObject:
   - component: {fileID: 297353980663674167}
   - component: {fileID: 297353980663674154}
   m_Layer: 0
-  m_Name: Cafe
+  m_Name: Volleyball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,12 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ba6928073fe4f4a9558f85eb7fe001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaWB: 5
+  deltaWB: 10
   usesMultiplier: 1
-  category: social
-  optimumWB: 100
-  deltaWBRate: 0.01
-  timeCost: 20
+  category: sport
+  optimumWB: 60
+  deltaWBRate: 0
+  timeCost: 8
   impact: {fileID: 0}
   dialogue: {fileID: 297353979825788413}
 --- !u!58 &297353980663674167
@@ -132,4 +131,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 15
-  promptText: Go into the cafe
+  promptText: Play Volley-Ball

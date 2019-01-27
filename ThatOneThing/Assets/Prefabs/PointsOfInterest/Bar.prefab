@@ -48,7 +48,7 @@ MonoBehaviour:
   - Add this to my tab.
   DialogueName: vice
   DialogueImage: {fileID: 0}
-  DialogueAudio: {fileID: 0}
+  DialogueAudio: {fileID: 8300000, guid: b46f0ba29a27b4e5ab203271651f7938, type: 3}
 --- !u!1 &297353980663674166
 GameObject:
   m_ObjectHideFlags: 0
