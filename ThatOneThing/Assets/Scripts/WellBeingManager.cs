@@ -24,6 +24,9 @@ public class WellBeingManager : MonoBehaviour
 
     static private WellBeingManager instance;
 
+    List<PointOfInterest> PoiList = new List<PointOfInterest>();
+    public ConclusionTransition conclusion;
+
     private void Awake()
     {
         if (!instance)
@@ -52,6 +55,11 @@ public class WellBeingManager : MonoBehaviour
         // UI
         UI_timeText.text = ((int)totalTime).ToString();
         UI_wellBeing.value = wellBeing / 100.0f;
+
+        if (wellBeing >= 100f || totalTime <= 0f)
+        {
+            conclusion.FadeToConclusion();
+        }
     }
 
     private void FixedUpdate()
