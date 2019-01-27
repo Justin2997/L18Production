@@ -44,7 +44,7 @@ public class Trigger : MonoBehaviour
             timer = 0;
         }
 
-        if (insideTrigger && activePoint)
+        if (insideTrigger && activePoint && !move.blockMovement)
         {
             // show button prompt pour interact
             interactPrompt.gameObject.SetActive(true);
@@ -53,11 +53,9 @@ public class Trigger : MonoBehaviour
             if(!activePoints.Find(x => x == this))
                 activePoints.Add(this);
 
-            if (Input.GetKeyDown(KeyCode.E)) // temp
+            if (Input.GetKeyDown(KeyCode.E)) 
             {
                 /// TODO
-                //block movement 
-                //block input
                 //transition
                 WellBeingManager.GetInstance().UpdateWellBeing(poi);
                 activePoint = false;

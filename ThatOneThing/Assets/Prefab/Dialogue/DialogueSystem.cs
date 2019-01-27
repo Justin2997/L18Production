@@ -46,6 +46,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if(m_IsDialoguePlaying)
         {
+            move.blockMovement = true;
             if(!m_audioSource.isPlaying)
                 m_audioSource.PlayOneShot(m_CurrentDialogue.DialogueAudio);
 
@@ -59,6 +60,8 @@ public class DialogueSystem : MonoBehaviour
             StartDialogue();
             m_IsDialoguePlaying = true;
         }
+        else
+            move.blockMovement = false;
     }
 
     void StartDialogue()
