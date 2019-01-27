@@ -25,7 +25,7 @@ public class playerFootStep : MonoBehaviour
     void Update()
     {
 
-        if(m_MoveComponent.ismoving && IsReadyForNewFootstepSound())
+        //if(m_MoveComponent.ismoving && IsReadyForNewFootstepSound())
         {
             if (m_SoundManager.m_CurrentZone == MapZone.Ville)
             {
