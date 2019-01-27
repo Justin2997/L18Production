@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 {
-
+    public Animator animator;
     public float speed;
     private Rigidbody2D rb;
-    private bool ismoving;
+    public bool ismoving;
 
     static public bool blockMovement = false;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         if (!blockMovement)
         {
             if (Input.GetKey(KeyCode.W))
@@ -42,23 +42,23 @@ public class move : MonoBehaviour
             }
         }
 
-        Animator animator = GetComponent<Animator>();
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Magnitude", movement.magnitude);
 
-        ismoving = Mathf.Abs(rb.velocity.x) > 0.1 || Mathf.Abs(rb.velocity.x) > 0.1;
-        animator.SetBool("IsMoving", ismoving);
-
-        if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(rb.velocity.y))
+        if (transform.position == transform.position + movement * Time.deltaTime * speed)
         {
-            animator.SetFloat("xVelocity", rb.velocity.x);
-            animator.SetFloat("yVelocity", 0);
+
+            ismoving = false;
+         
         }
         else
         {
-            animator.SetFloat("yVelocity", rb.velocity.y);
-            animator.SetFloat("xVelocity", 0);
+            transform.position = transform.position + movement * Time.deltaTime * speed;
+
+            ismoving = true;
+          
         }
 
     }
 }
-
-
