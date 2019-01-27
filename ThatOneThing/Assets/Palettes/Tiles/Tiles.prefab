@@ -6959,13 +6959,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 63aafe951daf6624c858fc966a139289, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 7c7770eadcbccb2489ea3a3f72067428, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c1eb194c0a6a20a408bbd4b02bd5aa2e, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 201bb93fbdd74674b976c75b9505d71e, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e482654fea79fcc40ad25ab21250e3da, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e5170af0762831e4b924ac961b7f28df, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 32a91ff6a12dce8478aa65d707017a5a, type: 2}
@@ -8748,17 +8748,17 @@ Tilemap:
       e02: 830.6123
       e03: 0
       e10: 0
-      e11: 0
-      e12: NaN
+      e11: NaN
+      e12: 1e-45
       e13: 0
-      e20: 115.58313
-      e21: 115.58313
-      e22: -5.835413e+28
-      e23: 123.604004
-      e30: 0
-      e31: 0
-      e32: 4.5912e-41
-      e33: 0
+      e20: NaN
+      e21: 0
+      e22: 8.786859e-39
+      e23: NaN
+      e30: 1
+      e31: 7.34684e-40
+      e32: 0
+      e33: NaN
   m_TileColorArray:
   - m_RefCount: 670
     m_Data: {r: 1, g: 1, b: 1, a: 1}
